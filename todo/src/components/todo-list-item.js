@@ -1,6 +1,10 @@
-const ToDoListItem = () => {
+const ToDoListItem = ({ label, important = false }) => {
+  const style = {
+    color: important ? 'tomato' : 'black'
+  };
+
   return (
-    <span>Drink Coffee</span>
+    <span style={ style }>{ label }</span>
   )
 };
 
