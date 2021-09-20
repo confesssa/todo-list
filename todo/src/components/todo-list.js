@@ -1,17 +1,20 @@
 import ToDoListItem from "./todo-list-item";
+import './todo-list.css';
 
-const ToDoList = () => {
+const ToDoList = ({ todos }) => {
+  const elements = todos.map((item) => {
+    const { id, ...itemProps} = item;
+    return (
+      <li key = { id }>
+      <ToDoListItem 
+      {...itemProps}
+      />
+    </li>
+    )
+  })
   return (
-    <ul>
-      <li>
-        <ToDoListItem label='Drink Coffee'/>
-      </li>
-      <li>
-        <ToDoListItem 
-          label='Build React App'
-          important
-        />
-      </li>
+    <ul className='list-group'>
+  { elements }
     </ul>
   )
 };
