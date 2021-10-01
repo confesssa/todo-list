@@ -42,17 +42,17 @@ export default class ToDoListItem extends Component {
 
         <button
           type="button"
-          className="btn btn-outline-success btn-sm float-end"
-          onClick={this.onMarkImportant}
+          className="btn btn-outline-primary btn-sm float-end"
         >
-          <i className="fas fa-exclamation"></i>
+          <i className="fas fa-trash"></i>
         </button>
 
         <button
           type="button"
           className="btn btn-outline-danger btn-sm float-end"
+          onClick={this.onMarkImportant}
         >
-          <i className="fas fa-trash"></i>
+          <i className="fas fa-exclamation"></i>
         </button>
       </span>
     );
