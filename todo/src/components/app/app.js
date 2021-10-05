@@ -12,18 +12,24 @@ export default class App extends Component {
   maxId = 100;
   state = {
     todoData: [
-      { label: "Drink Coffee", important: false, id: 1 },
-      { label: "Build React App", important: true, id: 2 },
-      { label: "Have a lunch", important: false, id: 3 },
+      this.createTodoItem('Drink Coffee'),
+      this.createTodoItem('Build React App'),
+      this.createTodoItem('Have a lunch'),
     ],
   };
 
-  addItem = (text) => {
-    const newItem = {
-      label: text,
+  createTodoItem(label) {
+    return {
+      label,
       important: false,
+      done: false,
       id: this.maxId++
     }
+
+  }
+
+  addItem = (text) => {
+    const newItem = this.createTodoItem(text);
 
     this.setState (({ todoData }) => {
       const newArray = [...todoData, newItem];
