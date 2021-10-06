@@ -25,7 +25,6 @@ export default class App extends Component {
       done: false,
       id: this.maxId++
     }
-
   }
 
   addItem = (text) => {
@@ -50,13 +49,19 @@ export default class App extends Component {
     });
   };
 
-  onToggleImportant = (id) => {
-    console.log('Toggle done', id)
-  } 
+onToggleDone = (id) => {
+  this.setState((state) => {
+    const items = this.toggleProperty(state.items, id, 'done');
+    return { items };
+  });
+};
 
-  onToggleDone = (id) => {
-    console.log('Toggle important', id)
-  }
+onToggleImportant = (id) => {
+  this.setState((state) => {
+    const items = this.toggleProperty(state.items, id, 'important');
+    return { items };
+  });
+};
 
   render() {
     return (
