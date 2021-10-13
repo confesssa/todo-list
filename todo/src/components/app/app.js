@@ -72,9 +72,12 @@ onToggleImportant = (id) => {
 };
 
   render() {
+    const { todoData } = this.state;
+    const doneCount = todoData.filter((el) => el.done ).length;
+    const todoCount = todoData.length - doneCount;
     return (
       <div className="todo-app">
-        <AppHeader toDo={1} done={3} />
+        <AppHeader toDo={ todoCount } done={ doneCount } />
 
         <div className="top-panel d-flex">
           <SearchPanel />
@@ -82,7 +85,7 @@ onToggleImportant = (id) => {
         </div>
         
         <ToDoList 
-          todos={this.state.todoData} 
+          todos={todoData} 
           onDeleted={this.deleteItem}
           onToggleImportant={this.onToggleImportant}
           onToggleDone={this.onToggleDone} />
