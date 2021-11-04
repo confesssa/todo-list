@@ -1,1 +1,1 @@
-The link on the app is [here](https://confesssa.github.io/ToDo-List/)
+The link on the app is [here](https://confesssa.github.io/todo-list/)
