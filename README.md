@@ -1,7 +1,7 @@
 ### To Do app
 
 <p><strong>Tools:</strong> React</p>
-<p>The project has the following functions:</p>
+<p>Here's a simple todo app implemented with React. The project has the following functions:</p>
 <ul>
 <li>add and delete task records;</li>
 <li>highlight important tasks with a color, crossing out completed tasks;</li>
